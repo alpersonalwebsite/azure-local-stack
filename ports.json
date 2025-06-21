@@ -1,0 +1,16 @@
+{
+  "mongodb": { "host": 8082, "container": 27017 },
+  "cosmosdb": [
+    { "host": 8081, "container": 8081 },
+    { "host": 10250, "container": 10250 },
+    { "host": 10251, "container": 10251 },
+    { "host": 10252, "container": 10252 },
+    { "host": 10253, "container": 10253 },
+    { "host": 10254, "container": 10254 }
+  ],
+  "storage": [
+    { "host": 10000, "container": 10000 },
+    { "host": 10001, "container": 10001 },
+    { "host": 10002, "container": 10002 }
+  ]
+}

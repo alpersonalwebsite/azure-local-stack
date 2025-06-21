@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+# Logs
+logs/
+.DS_Store
+*to-delete*
+# Auto generated
+docker-compose.yml

@@ -1,0 +1,4 @@
+# Python dependencies for Azure Local Stack project
+PyYAML>=6.0
+python-dotenv
+azure-storage-blob>=12.0.0
