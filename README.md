@@ -12,22 +12,30 @@ This project simulates Azure services locally using Docker Compose and Python. I
 
 ```
 azure-local-stack/
-├── docker-compose.yml       # Docker Compose configuration file
-├── services/                # Directory containing service-specific configurations
-│   ├── storage/             # Example: Azure Storage Emulator
-│   ├── cosmosdb/            # Example: Azure Cosmos DB Emulator
-│   └── ...                  # Add more services as needed
-├── scripts/                 # Python scripts for managing the stack
-│   ├── manage_stack.py      # Main management script
-│   ├── update_docker_compose.py # Script to update platform in docker-compose.yml
-├── requirements.txt         # Python dependencies
-├── README.md                # Project documentation
-└── reports/                 # Directory for storing scan reports
-    └── <repository_name>/   # Subdirectories for each repository
-        └── <timestamp>/     # Timestamped directories for each scan
-            ├── <tool>.json  # Individual tool reports
-            └── summary.html # Summary report
+├── docker-compose.template.yml   # Template for Docker Compose, edited by user
+├── docker-compose.yml            # Generated Docker Compose file (do not edit directly)
+├── ports.json                    # Host/container port mappings for all services
+├── requirements.txt              # Python dependencies
+├── README.md                     # Project documentation
+├── .gitignore                    # Git ignore rules (should include .env, secrets, etc.)
+├── scripts/                      # Python scripts for managing the stack
+│   ├── manage_stack.py           # Main management script (start/stop stack)
+│   ├── generate_compose.py       # Generates docker-compose.yml from template and ports.json
+│   └── ...                       # (Other utility scripts, if any)
+├── services/                     # Directory for service-specific configs (optional)
+│   ├── storage/                  # Example: Azure Storage Emulator
+│   ├── cosmosdb/                 # Example: Azure Cosmos DB Emulator
+│   └── ...                       # Add more services as needed
+└── reports/                      # Directory for storing scan reports (optional)
+    └── <repository_name>/        # Subdirectories for each repository
+        └── <timestamp>/          # Timestamped directories for each scan
+            ├── <tool>.json       # Individual tool reports
+            └── summary.html      # Summary report
 ```
+
+- **Edit only** `docker-compose.template.yml` and `ports.json` for configuration.
+- **Never edit** `docker-compose.yml` directly; it is auto-generated.
+- Use `scripts/manage_stack.py` to start/stop the stack and generate the compose file.
 
 ## Getting Started
 
